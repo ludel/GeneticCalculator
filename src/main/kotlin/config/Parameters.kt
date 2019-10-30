@@ -5,7 +5,7 @@ import beans.Equation
 object Parameters {
     private val expression = { (x, y, z): IntArray -> x + (y - 50) / 20 - z }
     private const val result = 20
-    private const val numberUnknowns = 4
+    private const val numberUnknowns = 3
 
     val equation: Equation = Equation(expression, result)
 
