@@ -49,7 +49,7 @@ class Factory(private val config: Parameters) {
             val startIndex = if (binary.startsWith("-")) 1 else 0
             val randomIndex = (startIndex until binary.length).random()
 
-            val replacement = if (binary[randomIndex].equals("1")) "0" else "0"
+            val replacement = if (binary[randomIndex].equals("1")) "0" else "1"
             binary = binary.replaceRange(randomIndex, randomIndex, replacement)
             newChild.genotype.add(Gene(binary.toInt(2)))
         }
@@ -93,6 +93,5 @@ class Factory(private val config: Parameters) {
         println("generation=$generationCursor")
         println("genesValues=${bestIndividual.getGenotypeValues()}")
         println("bestFitness=${bestIndividual.fitness}")
-        println(bestIndividual.getGenotypeValues()[0].toString(2))
     }
 }
